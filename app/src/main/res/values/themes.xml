@@ -1,0 +1,57 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- =========================
+         BASE APP THEME
+    ========================== -->
+    <style name="Base.Theme.Zoey_gardens_app"
+        parent="Theme.Material3.DayNight.NoActionBar">
+
+        <!-- 🌑 Primary branding colors -->
+        <item name="colorPrimary">@color/black_bg</item>
+        <item name="colorPrimaryContainer">@color/black_bg</item>
+        <item name="colorOnPrimary">@color/gold</item>
+
+        <!-- 🌑 Surface colors -->
+        <item name="colorSurface">@color/black_bg</item>
+        <item name="colorOnSurface">@color/gold</item>
+
+        <!-- 🌑 Status bar (optional but improves look) -->
+        <item name="android:statusBarColor">@color/black_bg</item>
+
+        <!-- 📌 This connects your popup menu styling -->
+        <item name="popupMenuStyle">@style/PopupMenuTheme</item>
+
+    </style>
+
+    <!-- =========================
+         APP THEME ENTRY POINT
+    ========================== -->
+    <style name="Theme.Zoey_gardens_app"
+        parent="Base.Theme.Zoey_gardens_app" />
+
+    <!-- =========================
+         POPUP MENU STYLE (⋮ MENU)
+    ========================== -->
+    <style name="PopupMenuTheme"
+        parent="ThemeOverlay.Material3.Dark">
+
+        <!-- 🎨 Menu text color -->
+        <item name="android:textColorPrimary">@color/gold</item>
+
+        <!-- 🎨 Menu background -->
+        <item name="android:popupBackground">@color/black_bg</item>
+
+        <!-- Optional: improves touch ripple visibility -->
+        <item name="android:itemTextAppearance">@style/PopupMenuText</item>
+
+    </style>
+
+    <!-- =========================
+         OPTIONAL TEXT STYLE (cleaner control)
+    ========================== -->
+    <style name="PopupMenuText">
+        <item name="android:textColor">@color/gold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+</resources>

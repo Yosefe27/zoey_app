@@ -1,0 +1,103 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 🌄 BACKGROUND IMAGE -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/restaurant_bg4"
+        android:scaleType="centerCrop" />
+
+    <!-- 🌑 DARK OVERLAY -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#66000000" />
+
+    <!-- 🧭 TOOLBAR (NOW CORRECTLY PLACED) -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black_bg"
+        app:popupTheme="@style/PopupMenuTheme"
+        app:title="Zoey Gardens"
+        app:titleTextColor="@color/gold" />
+
+    <!-- 📱 MAIN CONTENT -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp"
+        android:layout_marginTop="56dp">
+
+        <!-- 📞 CONTACT -->
+        <TextView
+            android:id="@+id/txtContact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Inquiries: 0979336221"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            android:gravity="center"
+            android:textColor="@color/gold" />
+
+        <!-- 🏷️ LOGO -->
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="210dp"
+            android:layout_height="130dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo" />
+
+        <!-- 🍽️ RESTAURANT NAME -->
+        <TextView
+            android:id="@+id/txtWelcome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Zoey Gardens Bar &amp; Restaurant"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/accent_green" />
+
+        <!-- 👤 USER WELCOME -->
+        <TextView
+            android:id="@+id/txtWelcomeUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Welcome"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/gold"
+            android:padding="10dp"
+            android:gravity="center"/>
+
+        <!-- 📋 TABS -->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabTextColor="@color/gray"
+            app:tabSelectedTextColor="@color/gold"
+            app:tabIndicatorColor="@color/accent_green"
+            app:tabIndicatorHeight="3dp"
+            android:background="#22FFFFFF"
+            android:elevation="6dp" />
+
+        <!-- 📦 VIEWPAGER -->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="8dp"
+            android:background="#11FFFFFF" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

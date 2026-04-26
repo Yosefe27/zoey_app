@@ -1,0 +1,85 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 🌄 BACKGROUND IMAGE -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/logo_bg"
+        android:scaleType="centerCrop"
+        android:alpha="0.9" />
+
+    <!-- 🧭 MAIN CONTENT -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <!-- 🏷️ TOP LOGO -->
+            <ImageView
+                android:id="@+id/imgLogo"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:src="@drawable/logo"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="30dp" />
+
+            <EditText
+                android:id="@+id/edtName"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="Enter Your Name"
+                android:padding="12dp"
+                android:textColor="@color/black_bg"
+                android:background="@android:drawable/edit_text"
+                android:inputType="text"
+                android:layout_marginBottom="15dp" />
+
+            <!-- 📱 PHONE INPUT -->
+            <EditText
+                android:id="@+id/edtPhone"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="Enter Phone Number"
+                android:padding="12dp"
+                android:textColor="@color/black_bg"
+                android:background="@android:drawable/edit_text"
+                android:inputType="phone"
+                android:layout_marginBottom="15dp" />
+
+            <!-- 🔒 PASSWORD INPUT -->
+            <EditText
+                android:id="@+id/edtPassword"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="Enter Password"
+                android:padding="12dp"
+                android:textColor="@color/black_bg"
+                android:background="@android:drawable/edit_text"
+                android:inputType="textPassword"
+                android:layout_marginBottom="20dp" />
+
+            <!-- 🔘 LOGIN BUTTON -->
+            <Button
+                android:id="@+id/btnSignup"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Create Account"
+                android:backgroundTint="@color/accent_green"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

@@ -1,0 +1,23 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top"
+    android:background="@color/black_bg">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="188dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="150dp"
+        android:contentDescription="Logo 1"
+        android:src="@drawable/top_logo" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:src="@drawable/logo"
+        android:contentDescription="Logo 2"/>
+
+</LinearLayout>
