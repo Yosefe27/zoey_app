@@ -12,7 +12,7 @@ import com.squareup.picasso.Picasso
 class MenuActivity : AppCompatActivity() {
 
     private lateinit var menuImage: ImageView
-    private val url = "https://yosefe27-001-site1.ktempurl.com/apis/get_calendar.php"
+    private val url = "https://zoeygardens-001-site1.site4future.com/apis/get_calendar.php"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
