@@ -67,12 +67,25 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.menu_full_menu -> {
-                //startActivity(Intent(this, FullMenuActivity::class.java))
+
+                val dialog = MenuDialogFragment()
+                dialog.show(supportFragmentManager, "menuDialog")
+
+                return true
+            }
+
+            R.id.menu_orderstatus -> {
+                startActivity(Intent(this, OrderTrackingActivity::class.java))
+                return true
+            }
+
+            R.id.tech_support -> {
+                startActivity(Intent(this, TechSupportActivity::class.java))
                 return true
             }
 
             R.id.menu_orders -> {
-                //startActivity(Intent(this, OrderHistoryActivity::class.java))
+                startActivity(Intent(this, OrderHistory::class.java))
                 return true
             }
         }

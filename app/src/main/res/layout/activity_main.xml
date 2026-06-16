@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:background="@color/black_bg"
         app:popupTheme="@style/PopupMenuTheme"
-        app:title="Zoey Gardens"
+        app:title="Zoey Gardens Bar/Restaurant"
         app:titleTextColor="@color/gold" />
 
     <!-- 📱 MAIN CONTENT -->
@@ -40,8 +40,8 @@
             android:id="@+id/txtContact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Inquiries: 0979336221"
-            android:textSize="14sp"
+            android:text="Inquiries: 0978231172"
+            android:textSize="12sp"
             android:textStyle="italic"
             android:gravity="center"
             android:textColor="@color/gold" />
@@ -49,8 +49,8 @@
         <!-- 🏷️ LOGO -->
         <ImageView
             android:id="@+id/imgLogo"
-            android:layout_width="210dp"
-            android:layout_height="130dp"
+            android:layout_width="190dp"
+            android:layout_height="100dp"
             android:layout_gravity="center"
             android:src="@drawable/logo" />
 
@@ -60,10 +60,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Zoey Gardens Bar &amp; Restaurant"
-            android:textSize="14sp"
+            android:textSize="10sp"
             android:textStyle="bold"
             android:gravity="center"
-            android:textColor="@color/accent_green" />
+            android:textColor="@color/accent_green"
+            android:visibility="gone"/>
 
         <!-- 👤 USER WELCOME -->
         <TextView
@@ -71,7 +72,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Welcome"
-            android:textSize="14sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             android:textColor="@color/gold"
             android:padding="10dp"

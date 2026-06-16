@@ -28,14 +28,32 @@
         android:visibility="gone"
         android:layout_marginTop="20dp"/>
 
-    <EditText
-        android:id="@+id/edtLocation"
+    <RadioGroup
+        android:id="@+id/radioLocation"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="Enter delivery location"
-        android:padding="12dp"
-        android:layout_margin="10dp"
-        android:background="@drawable/rounded_input"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+
+        <RadioButton
+            android:id="@+id/rbDining"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dining"/>
+
+        <RadioButton
+            android:id="@+id/rbPickup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick-Up"/>
+
+        <RadioButton
+            android:id="@+id/rbDelivery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delivery"/>
+
+    </RadioGroup>
 
     <Button
         android:id="@+id/btnCheckout"

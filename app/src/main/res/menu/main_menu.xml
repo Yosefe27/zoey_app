@@ -5,8 +5,17 @@
         android:title="Full Menu" />
 
     <item
+        android:id="@+id/menu_orderstatus"
+        android:title="Track Order" />
+
+    <item
         android:id="@+id/menu_orders"
-        android:title="Order History" />
+        android:title="View Order History" />
+
+    <item
+        android:id="@+id/tech_support"
+        android:title="Tech Support" />
+
 
     <item
         android:id="@+id/menu_logout"

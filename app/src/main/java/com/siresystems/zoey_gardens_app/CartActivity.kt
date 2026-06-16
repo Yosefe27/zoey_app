@@ -3,10 +3,7 @@ package com.siresystems.zoey_gardens_app
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,22 +19,22 @@ import retrofit2.Response
 class CartActivity : AppCompatActivity() {
 
     private lateinit var recyclerCart: RecyclerView
-    private lateinit var edtLocation: EditText
     private lateinit var txtTotal: TextView
     private lateinit var btnCheckout: Button
     private lateinit var txtEmpty: TextView
 
+    private lateinit var radioLocation: RadioGroup
     private lateinit var adapter: CartAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart)
 
-        edtLocation = findViewById(R.id.edtLocation)
         recyclerCart = findViewById(R.id.recyclerCart)
         txtTotal = findViewById(R.id.txtTotal)
         btnCheckout = findViewById(R.id.btnCheckout)
         txtEmpty = findViewById(R.id.txtEmpty)
+        radioLocation = findViewById(R.id.radioLocation)
 
         recyclerCart.layoutManager = LinearLayoutManager(this)
 
@@ -53,10 +50,16 @@ class CartActivity : AppCompatActivity() {
 
         btnCheckout.setOnClickListener {
 
-            val locationInput = edtLocation.text.toString().trim()
+            val locationInput = getSelectedLocation()
 
             if (locationInput.isEmpty()) {
-                edtLocation.error = "Enter delivery location"
+
+                Toast.makeText(
+                    this,
+                    "Please select Dining, Pick-Up or Delivery",
+                    Toast.LENGTH_SHORT
+                ).show()
+
                 return@setOnClickListener
             }
 
@@ -67,16 +70,33 @@ class CartActivity : AppCompatActivity() {
         }
     }
 
+    // ✅ GET SELECTED RADIO OPTION
+    private fun getSelectedLocation(): String {
+
+        return when (radioLocation.checkedRadioButtonId) {
+
+            R.id.rbDining -> "Dining"
+            R.id.rbPickup -> "Pick-Up"
+            R.id.rbDelivery -> "Delivery"
+
+            else -> ""
+        }
+    }
+
     private fun updateTotal() {
         txtTotal.text = "Total: K ${CartManager.getTotal()}"
     }
 
     private fun checkIfEmpty() {
+
         if (CartManager.cartItems.isEmpty()) {
+
             txtEmpty.visibility = View.VISIBLE
             recyclerCart.visibility = View.GONE
             btnCheckout.isEnabled = false
+
         } else {
+
             txtEmpty.visibility = View.GONE
             recyclerCart.visibility = View.VISIBLE
             btnCheckout.isEnabled = true
@@ -90,10 +110,10 @@ class CartActivity : AppCompatActivity() {
         checkIfEmpty()
     }
 
+    // ✅ FINAL ORDER SUBMISSION
     private fun placeOrder() {
 
         val prefs = getSharedPreferences("user", MODE_PRIVATE)
-
         val phone = prefs.getString("phone", "")?.trim() ?: ""
 
         if (phone.isEmpty()) {
@@ -101,17 +121,15 @@ class CartActivity : AppCompatActivity() {
             return
         }
 
-        // ✅ CART CHECK (IMPORTANT FIX)
         if (CartManager.cartItems.isEmpty()) {
             Toast.makeText(this, "Cart is empty", Toast.LENGTH_SHORT).show()
             return
         }
 
-        val locationInput = edtLocation.text.toString().trim()
+        val locationInput = getSelectedLocation()
 
         if (locationInput.isEmpty()) {
-            edtLocation.error = "Enter delivery location"
-            edtLocation.requestFocus()
+            Toast.makeText(this, "Please select order type", Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -121,7 +139,6 @@ class CartActivity : AppCompatActivity() {
         btnCheckout.isEnabled = false
         btnCheckout.text = "Processing..."
 
-        // ✅ FIXED API CALL (CORRECT DATA ONLY)
         ApiClient.instance.saveOrder(
             phone,
             locationInput,
@@ -133,6 +150,7 @@ class CartActivity : AppCompatActivity() {
                 call: Call<OrderResponse>,
                 response: Response<OrderResponse>
             ) {
+
                 btnCheckout.isEnabled = true
                 btnCheckout.text = "Checkout"
 
@@ -151,6 +169,7 @@ class CartActivity : AppCompatActivity() {
                     checkIfEmpty()
 
                 } else {
+
                     Toast.makeText(
                         this@CartActivity,
                         "Failed to place order",
@@ -160,6 +179,7 @@ class CartActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<OrderResponse>, t: Throwable) {
+
                 btnCheckout.isEnabled = true
                 btnCheckout.text = "Checkout"
 
