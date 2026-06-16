@@ -45,9 +45,7 @@ class OrderHistory : AppCompatActivity() {
         }
 
         // ✅ DYNAMIC URL WITH PHONE
-        val url =
-            "https://yosefe27-001-site1.ktempurl.com/zoey_apis/get_orderhistory.php?phone=$phone"
-
+        val url = "https://zoeygardens-001-site1.site4future.com/zoey_apis/get_orderhistory.php?phone=$phone"
         val queue = Volley.newRequestQueue(this)
 
         val request = JsonArrayRequest(
