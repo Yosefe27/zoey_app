@@ -46,7 +46,7 @@ class OrderTrackingActivity : AppCompatActivity() {
 
         // ✅ DYNAMIC URL WITH PHONE
         val url =
-            "https://yosefe27-001-site1.ktempurl.com/zoey_apis/get_orders.php?phone=$phone"
+            "https://zoeygardens-001-site1.site4future.com/zoey_apis/get_orders.php?phone=$phone"
 
         val queue = Volley.newRequestQueue(this)
 
