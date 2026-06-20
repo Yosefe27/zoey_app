@@ -1,6 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_margin="10dp"
-    android:padding="10dp"
+    android:layout_margin="5dp"
+    android:padding="5dp"
     android:orientation="horizontal"
     android:background="@drawable/card_bg"
     android:layout_width="match_parent"
@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/imgFood"
         android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_height="60dp"
         android:scaleType="centerCrop"
         android:src="@drawable/zoey_gardens_logo" />
 
@@ -24,7 +24,7 @@
 
         <TextView
             android:id="@+id/txtName"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
