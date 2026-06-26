@@ -30,6 +30,7 @@ class LoginActivity : AppCompatActivity() {
         val btn = findViewById<Button>(R.id.btnLogin)
         val signup = findViewById<TextView>(R.id.txtSignup)
         val admin_login = findViewById<TextView>(R.id.txtAdminLogin)
+        val waiter_login = findViewById<TextView>(R.id.txtWaiterLogin)
 
         btn.setOnClickListener {
 
@@ -103,6 +104,10 @@ class LoginActivity : AppCompatActivity() {
 
         admin_login.setOnClickListener {
             startActivity(Intent(this, AdminLoginActivity::class.java))
+        }
+
+        waiter_login.setOnClickListener {
+            startActivity(Intent(this, WaiterLoginActivity::class.java))
         }
     }
 }

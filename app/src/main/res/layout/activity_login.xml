@@ -100,6 +100,17 @@
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/txtWaiterLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Log In As WAITER"
+                android:textColor="@color/soft_gold"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
         </LinearLayout>
 
     </ScrollView>

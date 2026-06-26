@@ -39,6 +39,7 @@
         <activity android:name=".InventroyReportActivity"/>
         <activity android:name=".DailySalesReportActivity"/>
         <activity android:name=".FinancialDashboardActivity"/>
+        <activity android:name=".WaiterLoginActivity"/>
 
 
     </application>
