@@ -40,7 +40,7 @@
             android:id="@+id/txtContact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Inquiries: 0978231172"
+            android:text="Inquiries: 0761983878"
             android:textSize="12sp"
             android:textStyle="italic"
             android:gravity="center"

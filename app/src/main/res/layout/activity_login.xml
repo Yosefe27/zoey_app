@@ -88,6 +88,18 @@
                 android:textColor="@android:color/white"
                 android:textStyle="bold" />
 
+            <!-- SIGNUP -->
+            <TextView
+                android:id="@+id/txtAdminLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Log In As ADMIN"
+                android:textColor="@color/white"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
         </LinearLayout>
 
     </ScrollView>

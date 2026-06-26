@@ -29,6 +29,7 @@ class LoginActivity : AppCompatActivity() {
         val pass = findViewById<EditText>(R.id.edtPassword)
         val btn = findViewById<Button>(R.id.btnLogin)
         val signup = findViewById<TextView>(R.id.txtSignup)
+        val admin_login = findViewById<TextView>(R.id.txtAdminLogin)
 
         btn.setOnClickListener {
 
@@ -98,6 +99,10 @@ class LoginActivity : AppCompatActivity() {
 
         signup.setOnClickListener {
             startActivity(Intent(this, SignupActivity::class.java))
+        }
+
+        admin_login.setOnClickListener {
+            startActivity(Intent(this, AdminLoginActivity::class.java))
         }
     }
 }

@@ -31,6 +31,14 @@
         <activity android:name=".OrderTrackingActivity"/>
         <activity android:name=".OrderHistory"/>
         <activity android:name=".TechSupportActivity"/>
+        <activity android:name=".AdminLoginActivity"/>
+        <activity android:name=".AdminDashboardActivity"/>
+        <activity android:name=".OrdersActivity"/>
+        <activity android:name=".CashupActivity"/>
+        <activity android:name=".LedgerActivity"/>
+        <activity android:name=".InventroyReportActivity"/>
+        <activity android:name=".DailySalesReportActivity"/>
+        <activity android:name=".FinancialDashboardActivity"/>
 
 
     </application>

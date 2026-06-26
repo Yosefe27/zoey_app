@@ -10,7 +10,6 @@ import android.widget.Button
 import android.widget.RadioGroup
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 import com.siresystems.zoey_gardens_app.api.ApiClient
@@ -37,9 +36,9 @@ class PaymentActivity : AppCompatActivity() {
     // =========================
     // ADMIN DETAILS
     // =========================
-    private val adminWhatsApp = "260979336221"
+    private val adminWhatsApp = "260761983878"
 
-    // CHANGE TO YOUR REAL URL
+    // EMAIL API URL
     private val emailApiUrl =
         "https://zoeygardens-001-site1.site4future.com/zoey_apis/send_order_email.php"
 
@@ -108,7 +107,7 @@ class PaymentActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
 
                     // SEND EMAIL TO ADMIN
-                    sendEmailToServer(phone)
+                    //sendEmailToServer(phone)
 
                     // CLEAR CART
                     CartManager.cartItems.clear()
@@ -119,8 +118,8 @@ class PaymentActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT
                     ).show()
 
-                    // SHOW WHATSAPP DIALOG
-                    showWhatsAppDialog(phone)
+                    // OPEN WHATSAPP AUTOMATICALLY
+                    openWhatsApp(phone)
 
                 } else {
 
@@ -155,51 +154,6 @@ class PaymentActivity : AppCompatActivity() {
     }
 
     // =========================
-    // SHOW WHATSAPP DIALOG
-    // =========================
-    private fun showWhatsAppDialog(phone: String) {
-
-        AlertDialog.Builder(this)
-            .setTitle("Notify Admin")
-            .setMessage("Would you like to notify the admin on WhatsApp? Include Proof Of Payment if possible.")
-            .setCancelable(false)
-
-            // YES BUTTON
-            .setPositiveButton("Yes") { _, _ ->
-
-                openWhatsApp(phone)
-
-                Handler(Looper.getMainLooper()).postDelayed({
-
-                    startActivity(
-                        Intent(
-                            this@PaymentActivity,
-                            MainActivity::class.java
-                        )
-                    )
-
-                    finish()
-
-                }, 1500)
-            }
-
-            // NO BUTTON
-            .setNegativeButton("No") { _, _ ->
-
-                startActivity(
-                    Intent(
-                        this@PaymentActivity,
-                        MainActivity::class.java
-                    )
-                )
-
-                finish()
-            }
-
-            .show()
-    }
-
-    // =========================
     // OPEN WHATSAPP
     // =========================
     private fun openWhatsApp(phone: String) {
@@ -208,23 +162,21 @@ class PaymentActivity : AppCompatActivity() {
 
             val message = """
                 I just Placed An Order
-                
+
                 Customer Phone: $phone
-                
+
                 Option: $location
-                
+
                 Total Amount: K $total
-                
             """.trimIndent()
 
             val url = "https://wa.me/$adminWhatsApp?text=" +
                     URLEncoder.encode(message, "UTF-8")
 
-            val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse(url)
-
-            // OPEN DIRECTLY IN WHATSAPP
-            intent.setPackage("com.whatsapp")
+            val intent = Intent(Intent.ACTION_VIEW).apply {
+                data = Uri.parse(url)
+                setPackage("com.whatsapp")
+            }
 
             startActivity(intent)
 
@@ -235,6 +187,8 @@ class PaymentActivity : AppCompatActivity() {
                 "WhatsApp is not installed",
                 Toast.LENGTH_LONG
             ).show()
+
+            Log.e("WHATSAPP_ERROR", e.message ?: "Unknown error")
         }
     }
 
@@ -282,7 +236,10 @@ class PaymentActivity : AppCompatActivity() {
 
                 val responseText = response.body?.string()
 
-                Log.d("EMAIL_RESPONSE", responseText ?: "No response")
+                Log.d(
+                    "EMAIL_RESPONSE",
+                    responseText ?: "No response"
+                )
 
                 response.close()
             }

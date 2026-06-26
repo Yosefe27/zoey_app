@@ -27,15 +27,37 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="Airtel Money: 20010340"
+        android:text="Airtel Money (Get Cash): 20010340"
         android:textAlignment="center"
-        android:textColor="@color/ic_launcher_background"
-        android:textSize="20sp"
+        android:textColor="@color/primary_green"
+        android:textSize="18sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/txtMTN"
+        android:id="@+id/txtAirtelName"
         android:text="Name: Stephen Jere"
+        android:textSize="20sp"
+        android:layout_marginTop="5dp"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/primary_green"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/txtMomo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="MTN Momo (Send Cash): 0761983878"
+        android:textAlignment="center"
+        android:textColor="@color/ic_launcher_background"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtMomoName"
+        android:text="Name: Machimba Chapotoka"
         android:textSize="20sp"
         android:layout_marginTop="5dp"
         android:textAlignment="center"
@@ -43,6 +65,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/ic_launcher_background"
         android:textStyle="bold"/>
+
 
     <View
         android:id="@+id/divider"
@@ -53,7 +76,7 @@
 
     <TextView
         android:id="@+id/txtinfo"
-        android:text="Please ensure that payment is made to the indicated number as orders will not be attended to until payment is made. For Queries on how to complete payment, please call 0978231172"
+        android:text="Please ensure that payment is made to the indicated number as orders will not be attended to until payment is made. For Queries on how to complete payment, please call 0761983878"
         android:textSize="20sp"
         android:textAlignment="center"
         android:layout_width="match_parent"

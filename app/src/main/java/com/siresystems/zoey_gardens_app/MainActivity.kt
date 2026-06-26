@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewPager: ViewPager2
     private lateinit var tabLayout: TabLayout
     private lateinit var txtWelcomeUser: TextView
+    private lateinit var bannerPager:ViewPager2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +49,8 @@ class MainActivity : AppCompatActivity() {
                 else -> "Menu"
             }
         }.attach()
+
+
     }
 
     // ================= MENU =================

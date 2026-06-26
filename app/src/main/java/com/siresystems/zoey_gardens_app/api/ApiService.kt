@@ -28,6 +28,14 @@ interface ApiService {
         @Field("password") password: String
     ): Call<UserResponse>
 
+    // 🔑 ADMIN LOGIN
+    @FormUrlEncoded
+    @POST("admin_login.php")
+    fun adminlogin(
+        @Field("phone") phone: String,
+        @Field("password") password: String
+    ): Call<UserResponse>
+
     @FormUrlEncoded
     @POST("save_order.php")
     fun saveOrder(

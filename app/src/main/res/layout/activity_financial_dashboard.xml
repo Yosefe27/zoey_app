@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Financial Dashboard"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary_green"
+            android:paddingBottom="15dp"/>
+
+        <!-- TOTAL INCOME -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primary_green"
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:text="💰 TOTAL INCOME"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/gold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtIncomeVisa"
+                android:textColor="@color/gold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtIncomeCash"
+                android:textColor="@color/gold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtIncomeMomo"
+                android:textColor="@color/gold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtIncomeTotal"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/gold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+
+        <!-- EXPENSES -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gold"
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:text="💸 TOTAL EXPENSES"
+                android:textStyle="bold"
+                android:textColor="@color/primary_green"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtExpenseVisa"
+                android:textColor="@color/primary_green"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtExpenseCash"
+                android:textColor="@color/primary_green"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtExpenseMomo"
+                android:textColor="@color/primary_green"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtExpenseTotal"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/primary_green"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+
+        <!-- BALANCES -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primary_green"
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:text="🏦 BALANCE BY POOL"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/gold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtBalanceVisa"
+                android:textColor="@color/gold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtBalanceCash"
+                android:textColor="@color/gold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtBalanceMomo"
+                android:textColor="@color/gold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+
+        <!-- PROFIT -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gold"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <TextView
+                android:text="📈 PROFIT &amp; LOSS"
+                android:textColor="@color/primary_green"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtProfitIncome"
+                android:textColor="@color/primary_green"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtProfitExpense"
+                android:textColor="@color/primary_green"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtProfit"
+                android:textColor="@color/primary_green"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
