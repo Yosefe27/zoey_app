@@ -50,7 +50,7 @@ class WaiterLoginActivity : AppCompatActivity() {
             btn.isEnabled = false
             btn.text = "Logging in..."
 
-            ApiClient.instance.adminlogin(userPhone, userPass)
+            ApiClient.instance.waiterlogin(userPhone, userPass)
                 .enqueue(object : Callback<UserResponse> {
 
                     override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
@@ -73,7 +73,8 @@ class WaiterLoginActivity : AppCompatActivity() {
 
                                 Toast.makeText(this@WaiterLoginActivity, "Welcome ${res.name}", Toast.LENGTH_SHORT).show()
 
-                                startActivity(Intent(this@WaiterLoginActivity, AdminDashboardActivity::class.java))
+                                startActivity(Intent(this@WaiterLoginActivity,
+                                    WaiterDashboardActivity::class.java))
                                 finish()
 
                             } else {

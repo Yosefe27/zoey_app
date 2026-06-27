@@ -40,6 +40,9 @@
         <activity android:name=".DailySalesReportActivity"/>
         <activity android:name=".FinancialDashboardActivity"/>
         <activity android:name=".WaiterLoginActivity"/>
+        <activity android:name=".WaiterDashboardActivity"/>
+        <activity android:name=".DailySalesActivity"/>
+        <activity android:name=".SalesHistoryActivity"/>
 
 
     </application>

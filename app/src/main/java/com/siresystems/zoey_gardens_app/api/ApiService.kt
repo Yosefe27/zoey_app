@@ -1,13 +1,19 @@
 package com.siresystems.zoey_gardens_app.api
 
+import com.siresystems.zoey_gardens_app.model.DailySale
+import com.siresystems.zoey_gardens_app.model.GenericResponse
 import com.siresystems.zoey_gardens_app.model.MenuItem
 import com.siresystems.zoey_gardens_app.model.OrderResponse
+import com.siresystems.zoey_gardens_app.model.SalesHistoryResponse
+import com.siresystems.zoey_gardens_app.model.SaveSalesRequest
 import com.siresystems.zoey_gardens_app.model.UserResponse
 import retrofit2.Call
+import retrofit2.http.Body
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 interface ApiService {
 
@@ -36,6 +42,14 @@ interface ApiService {
         @Field("password") password: String
     ): Call<UserResponse>
 
+    // 🔑 WAITER LOGIN
+    @FormUrlEncoded
+    @POST("waiter_login.php")
+    fun waiterlogin(
+        @Field("phone") phone: String,
+        @Field("password") password: String
+    ): Call<UserResponse>
+
     @FormUrlEncoded
     @POST("save_order.php")
     fun saveOrder(
@@ -48,4 +62,19 @@ interface ApiService {
 
     @GET("get_menu.php")
     fun getMenu(): Call<List<MenuItem>>
+
+    @GET("get_items.php")
+    fun getItems():
+            Call<List<DailySale>>
+
+    @POST("save_daily_sales.php")
+    fun saveDailySales(
+        @Body request: SaveSalesRequest
+    ): Call<GenericResponse>
+
+    @GET("get_waiter_sales.php")
+    fun getWaiterSales(
+        @Query("employee") employee: String,
+        @Query("date") date: String? = null
+    ): Call<SalesHistoryResponse>
 }

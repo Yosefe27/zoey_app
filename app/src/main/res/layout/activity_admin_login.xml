@@ -10,7 +10,7 @@
         android:layout_height="0dp"
         android:src="@drawable/admin_bg"
         android:scaleType="centerCrop"
-        android:alpha="4.9"
+        android:alpha="9.9"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
